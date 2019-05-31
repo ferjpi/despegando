@@ -1,0 +1,138 @@
+// Place all the styles related to the vuelos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$color-black: #000;
+$color-gray-1: #444;
+$color-gray-2: #666;
+$color-gray-3: #888;
+
+$color-puple: #4300d2;
+$color-purple-dark: #270570;
+
+$border-radius-default: 5px;
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+
+  .header-logo {
+    align-items: center;
+    display: flex;
+    padding-left: 1.5rem;
+    font-size: 1.3rem;
+
+    i,
+    a {
+      color: $color-puple;
+      font-weight: 600px;
+    }
+  }
+  .header-sesion {
+    background: #eeeeee;
+    border-radius: 0 0 0 30px;
+    justify-content: end;
+    padding: 0.5rem 1rem;
+    width: 400px;
+
+    .nav-item {
+      padding: 0 20px;
+
+      i,
+      a {
+        color: #757575;
+      }
+    }
+  }
+}
+
+.header-navigation {
+  padding: 0 40px;
+
+  .header-products {
+    width: 100%;
+
+    .header-products--list {
+      display: flex;
+      justify-content: space-between;
+      list-style: none;
+      margin: 20px auto;
+      padding-left: 0;
+
+      .header-products--item {
+        display: inherit;
+        flex-direction: column;
+
+        i {
+          color: #686464;
+          text-align: center;
+
+          &:hover {
+            color: $color-puple;
+          }
+        }
+
+        a {
+          color: #686464;
+          &:hover {
+            color: $color-puple;
+          }
+        }
+      }
+    }
+  }
+}
+
+.home-container {
+  background: $color-purple-dark;
+  padding: 52px 0;
+
+  .searchbox {
+    background: #ffffff;
+    border-radius: $border-radius-default;
+
+    .box-row {
+      margin: 0 0rem;
+
+      .box-row--inputs {
+        .box-row--input {
+          input {
+            border-radius: $border-radius-default;
+          }
+          input::placeholder {
+            font-style: italic;
+            color: $color-gray-2;
+          }
+        }
+      }
+
+      .box-row--passenger {
+        .box-row--container {
+          .box-row--input {
+            input {
+              border-radius: $border-radius-default;
+            }
+          }
+        }
+      }
+
+      .box-row--button {
+        display: flex;
+        align-items: end;
+
+        .box-row--button--container {
+          align-items: center;
+          display: inherit;
+
+          a {
+            background: $color-puple;
+            border-radius: $border-radius-default;
+            height: 40px;
+            padding: 5px 20px;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,2 @@
+class Vuelo < ApplicationRecord
+end
