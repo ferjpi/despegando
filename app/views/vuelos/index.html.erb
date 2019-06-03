@@ -66,38 +66,65 @@
 
         <!--box-row--inputs -->
         <div class="box-row--inputs col-6 row">
-          <%= form_tag(root_path,class: "row")  do %>
+          <%= form_tag(vuelos_path, method: :get, class: "row")  do %>
           <div class="box-row--input col-5">
-            <%= label_tag(:q, 'Origen') %>
-            <%= text_field_tag(:q,  "Ingresa desde donde viajas") %>
+            <%= label_tag(:departure, 'Origen') %>
+            <%= text_field_tag(:departure,  "Ingresa desde donde viajas") %>
           </div>
           <div class="box-row--input col-5">
-            <%= label_tag(:q, 'Destino') %>
-            <%= text_field_tag(:q,  "Ingresa hacia donde viajas")  %>
+            <%= label_tag(:destination, 'Destino') %>
+            <%= text_field_tag(:destination,  "Ingresa hacia donde viajas")  %>
           </div>
-          <%end%>
         </div>
 
         <!--box-row--passenger -->
         <div class="box-row--passenger col-4">
           <div class="box-row--container">
-          <%= form_tag(root_path,class: "")  do %>
-            <%= label_tag(:p, 'Pasajeros')%>
+            <%= label_tag(:passenger, 'Pasajeros')%>
             <div class="box-row--input">
-              <%= text_field_tag(:p,  "personas")  %>
+              <%= text_field_tag(:passenger,  "personas")  %>
             </div>
-          <% end  %>
           </div>
         </div>
 
         <!--box-row--button -->
         <div class="box-row--button col-2">
           <div class="box-row--button--container">
-            <%= link_to 'Buscar', root_path, class: "btn btn-lg" %>
+            <%= submit_tag('Buscar',name: nil,class: "btn btn-lg") %>
           </div>
         </div>
-
+          <% end  %>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- Resultado de la busqueda -->
+<% flash.each do |message_type, message| %>
+  <%= message  %>
+<% end  %>
+
+<div class="container mt-5">
+  <div class="show-flights p-2 row">
+  <% if @vuelo  %>
+    <div class="show-flights--group-1 col-9 row justify-content-center">
+      <div class="show-flights__departure ml-5 mr-5">
+        <%= @vuelo.departure%>
+      </div>
+      <div class="to m-2">
+          <%=icon('fas', 'long-arrow-alt-right')%>
+      </div>
+      <div class="show-flights__destination ml-5 mr-5">
+        <%= @vuelo.destination%>
+      </div>
+    </div>
+    <div class="show-flights--group-2 col-3 row justify-content-center">
+      <div class="show-flights--selection m-2">
+        <%= link_to 'Seleccionar', vuelo_path(@vuelo), class: "btn btn-lg" %>
+      </div>
+    </div>
+  <% else %>
+    <p>no hay vuelos</p>
+  <% end %>
   </div>
 </div>

@@ -6,6 +6,7 @@ $color-black: #000;
 $color-gray-1: #444;
 $color-gray-2: #666;
 $color-gray-3: #888;
+$color-gray-4: #eee;
 
 $color-puple: #4300d2;
 $color-purple-dark: #270570;
@@ -124,7 +125,7 @@ $border-radius-default: 5px;
           align-items: center;
           display: inherit;
 
-          a {
+          input {
             background: $color-puple;
             border-radius: $border-radius-default;
             height: 40px;
@@ -132,6 +133,37 @@ $border-radius-default: 5px;
             color: white;
           }
         }
+      }
+    }
+  }
+}
+
+.show-flights {
+  background: $color-gray-4;
+  border-radius: $border-radius-default;
+
+  .show-flights--group-1 {
+    .show-flights__departure {
+      display: flex;
+      align-items: center;
+    }
+    .show-flights__destination {
+      display: flex;
+      align-items: center;
+    }
+    .to {
+      display: flex;
+      align-items: center;
+    }
+  }
+  .show-flights--group-2 {
+    align-items: center;
+
+    .show-flights--selection {
+      a {
+        background: $color-puple;
+        border-radius: $border-radius-default;
+        color: white;
       }
     }
   }
