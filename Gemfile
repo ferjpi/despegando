@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.1'
 
+# Devise
+gem 'devise', '~> 4.6'
 # Font awesome
 gem 'font-awesome-sass', '~> 5.8.1'
 # Bootstrap
