@@ -1,11 +1,85 @@
-<h1> Show </h1>
+<div class="show">
+  <div class="container">
+    <div class="card card-vuelo">
+        <div class="card-body--division title">
+          <div class="title">
+            <h5>Disfruta de tu viaje a <%= @vuelo.destination%></h5>
+          </div>
+        </div>
+        <div class="card-body--division departure">
+          <div class="box row">
+            <p>Ida</p>
+            <%=icon('fas', 'plane-departure')%>
+          </div>
+          <h6 class="card-title text-center p-4 row">
+            <%= @vuelo.departure%> - <%= @vuelo.destination%>
+          </h6>
+        </div>
+        <div class="card-body--division destination">
+          <div class="box row">
+            <p>Vuelta</p>
+            <%=icon('fas', 'plane-arrival')%>
+          </div>
+          <h6 class="card-title text-center p-4 row">
+            <%= @vuelo.destination%> - <%= @vuelo.departure%>
+          </h6>
+        </div>
+        <div class="card-body--division selection">
+          <div class="prices">
 
-<div class="container">
-  <div class="card card-vuelo">
-    <div class="card-body">
-      <h4 class="card-title">
-        <%= @vuelo.departure%> - <%= @vuelo.destination%>
-      </h4>
+            <div class="price_main mb-2 text-right">
+              <div class="price_main--title">
+                <span>Precio por adulto</span>
+              </div>
+              <div class="price_main--amount">
+                <span>$<%= @vuelo.price * @vuelo.passenger%></span>
+              </div>
+            </div>
+
+            <div class="price_details">
+              <div class="price_details--items">
+                <div class="price_details--item">
+                  <p class="price_details--subitems">
+                  <em><%= @passenger%> Adulto</em>
+                  <span>
+                    <% pr = @vuelo.price * @vuelo.passenger %>
+                    <% imp =  pr * 0.19  %>
+                    <% car = pr  / 6.6 %>
+                    $<%= pr.round(2) - (imp.round(2) + car.round(2)) %>
+                  </span>
+                  </p>
+                  <p class="price_details--subitems">
+                  <em>Imp. y tasas</em>
+                  <span>
+                    $<%= imp.round(2) %>
+                  </span>
+                  </p>
+                  <p class="price_details--subitems">
+                  <em>Cargos</em>
+                  <span>
+                    $<%= car.round(2) %>
+                  </span>
+                  </p>
+                  <hr/>
+                  <p class="price_details--subitems final">
+                  <em>Precio final</em>
+                  <span>
+                    $<%= @vuelo.price * @vuelo.passenger %>
+                  </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="price_button text-center">
+              <% if  user_signed_in? %>
+                <%= link_to 'Seleccionar', class: "btn btn-lg"  %>
+              <% else %>
+                <%= link_to 'Seleccionar', user_session_path, class: "btn btn-lg" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
     </div>
   </div>
 </div>

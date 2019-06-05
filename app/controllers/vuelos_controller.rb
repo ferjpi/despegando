@@ -5,6 +5,7 @@ class VuelosController < ApplicationController
 
   def show
     @vuelo = Vuelo.find_by(id: params[:id])
+    @passenger = params[:passenger]
   end
 
   private

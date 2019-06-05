@@ -168,3 +168,112 @@ $border-radius-default: 5px;
     }
   }
 }
+
+.show {
+  background: $color-gray-4;
+  height: calc(100vh - 128px);
+  padding: 50px 0;
+
+  .card.card-vuelo {
+    display: grid;
+    grid-template-columns: 1fr 250px;
+    grid-template-rows: 40px 1fr 1fr;
+    grid-template-areas:
+      "title selection"
+      "departure selection"
+      "destination selection";
+
+    .card-body--division {
+      border: 1px solid rgba(0, 0, 0, 0.125);
+    }
+    .card-body--division.title {
+      grid-area: title;
+      padding: 5px 0;
+      text-align: center;
+    }
+    .card-body--division.departure {
+      display: grid;
+      grid-area: departure;
+      grid-template-columns: 100px 1fr;
+
+      .box {
+        align-items: center;
+        background: $color-gray-4;
+        margin: 0;
+        p {
+          margin-left: 10px;
+          margin-bottom: 0;
+        }
+        i {
+          margin-left: 10px;
+        }
+      }
+      .card-title {
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0;
+      }
+    }
+    .card-body--division.destination {
+      display: grid;
+      grid-area: destination;
+      grid-template-columns: 100px 1fr;
+
+      .box {
+        align-items: center;
+        background: $color-gray-4;
+        margin: 0;
+        p {
+          margin-left: 10px;
+          margin-bottom: 0;
+        }
+        i {
+          margin-left: 10px;
+        }
+      }
+      .card-title {
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0;
+      }
+    }
+    .card-body--division.selection {
+      grid-area: selection;
+      padding: 15px;
+
+      .price_main {
+        .price_main--title,
+        .price_main--amount {
+          span {
+            font-weight: 600;
+            font-size: 0.8rem;
+          }
+        }
+      }
+
+      .price_details {
+        .price_details--items {
+          .price_details--item {
+            .price_details--subitems {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+            }
+            .price_details--subitems.final {
+              font-weight: 600;
+            }
+          }
+        }
+      }
+
+      .price_button {
+        .btn.btn-lg {
+          background: $color-puple;
+          border-radius: $border-radius-default;
+          height: 40px;
+          padding: 5px 20px;
+          color: white;
+        }
+      }
+    }
+  }
+}
