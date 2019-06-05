@@ -1,0 +1,30 @@
+.user {
+  // background-image: url("user.svg");
+  background: linear-gradient(45deg, #4fc1e8, #49ceb5);
+
+  background-size: cover;
+  height: 100vh;
+
+  .container {
+    .form_user {
+      margin: 40px auto;
+      width: 300px;
+
+      .field {
+        .input {
+          border-radius: 5px;
+          outline: none;
+          width: 300px;
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+
+  .icon {
+    color: white;
+  }
+}

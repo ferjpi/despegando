@@ -4,7 +4,7 @@ class VuelosController < ApplicationController
   end
 
   def show
-    
+    @vuelo = Vuelo.find_by(id: params[:id])
   end
 
   private
