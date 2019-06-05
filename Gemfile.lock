@@ -106,6 +106,7 @@ GEM
     loofah (2.2.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
+    magnific-popup-rails (1.1.0)
     mail (2.7.1)
       mini_mime (>= 0.1.1)
     marcel (0.3.3)
@@ -229,6 +230,7 @@ DEPENDENCIES
   font-awesome-sass (~> 5.8.1)
   jbuilder (~> 2.5)
   jquery-rails
+  magnific-popup-rails (~> 1.1.0)
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
   rails (~> 5.2.3)

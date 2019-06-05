@@ -7,15 +7,19 @@
   <ul class="header-sesion nav ">
     <div class="nav-item">
      <%=icon('fas', 'user')%>
-      <%= link_to "Iniciar sesion", class: "nav-link"%>
+     <% if user_signed_in? %>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete%>
+     <% else %>
+      <%= link_to "Iniciar sesion", user_session_path%>
+     <% end %>
     </div>
     <div class="nav-item">
      <%=icon('fas', 'suitcase-rolling')%>
-      <%= link_to "Rutas", class: "nav-link"%>
+      <%= link_to "Rutas"%>
     </div>
     <div class="nav-item">
       <%=icon('fas', 'question-circle')%>
-      <%= link_to "Ayuda", class: "nav-link"%>
+      <%= link_to "Ayuda"%>
     </div>
   </ul>
 </nav>
@@ -100,13 +104,9 @@
 </div>
 
 <!-- Resultado de la busqueda -->
-<% flash.each do |message_type, message| %>
-  <%= message  %>
-<% end  %>
-
+<% if @vuelo  %>
 <div class="container mt-5">
   <div class="show-flights p-2 row">
-  <% if @vuelo  %>
     <div class="show-flights--group-1 col-9 row justify-content-center">
       <div class="show-flights__departure ml-5 mr-5">
         <%= @vuelo.departure%>
@@ -123,8 +123,7 @@
         <%= link_to 'Seleccionar', vuelo_path(@vuelo), class: "btn btn-lg" %>
       </div>
     </div>
-  <% else %>
-    <p>no hay vuelos</p>
+  
   <% end %>
   </div>
 </div>

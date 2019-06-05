@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.1'
 
+# PopUp
+gem 'magnific-popup-rails', '~> 1.1.0'
 # Devise
 gem 'devise', '~> 4.6'
 # Font awesome
