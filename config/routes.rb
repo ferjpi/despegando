@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'checkouts/index'
+  get 'checkouts/show'
   devise_for :users
   root 'vuelos#index'
   resources :vuelos

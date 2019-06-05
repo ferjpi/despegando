@@ -1,0 +1,2 @@
+class UserFly < ApplicationRecord
+end

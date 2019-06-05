@@ -73,7 +73,7 @@
 
             <div class="price_button text-center">
               <% if  user_signed_in? %>
-                <%= link_to 'Seleccionar', class: "btn btn-lg"  %>
+                <%= link_to 'Seleccionar', root_path, class: "btn btn-lg"  %>
               <% else %>
                 <%= link_to 'Seleccionar', user_session_path, class: "btn btn-lg" %>
               <% end %>
