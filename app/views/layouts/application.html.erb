@@ -12,7 +12,11 @@
   <body>
     <% if notice %><p class="notice" id="notice"><%= notice %></p><% end %>
     <% if alert %><p class="alert" id="alert"><%= alert %></p><% end %>
-    <%= render "layouts/navbar" %>
-    <%= yield %>
+    <%if current_page?(user_session_path) || current_page?(new_user_registration_path) %>
+      <%= yield %>
+    <% else %>
+      <%= render "layouts/navbar" %>
+      <%= yield %>
+    <% end %>
   </body>
 </html>

@@ -40,9 +40,9 @@
               <div class="price_details--items">
                 <div class="price_details--item">
                   <p class="price_details--subitems">
-                  <em><%= @passenger%> Adulto</em>
+                  <em><%= @people %> Adulto</em>
                   <span>
-                    <% pr = @vuelo.price * @vuelo.passenger %>
+                    <% pr = @vuelo.price * @people.to_i %>
                     <% imp =  pr * 0.19  %>
                     <% car = pr  / 6.6 %>
                     $<%= pr.round(2) - (imp.round(2) + car.round(2)) %>
@@ -64,7 +64,7 @@
                   <p class="price_details--subitems final">
                   <em>Precio final</em>
                   <span>
-                    $<%= @vuelo.price * @vuelo.passenger %>
+                    $<%= @vuelo.price * @people.to_i %>
                   </span>
                   </p>
                 </div>
