@@ -32,7 +32,7 @@
                 <span>Precio por adulto</span>
               </div>
               <div class="price_main--amount">
-                <span>$<%= @vuelo.price * @vuelo.passenger%></span>
+                <span>$<%= @vuelo.price * @people.to_i%></span>
               </div>
             </div>
 
@@ -73,7 +73,7 @@
 
             <div class="price_button text-center">
               <% if  user_signed_in? %>
-                <%= link_to 'Seleccionar', root_path, class: "btn btn-lg"  %>
+                <%= link_to 'Seleccionar', checkouts_index_path, class: "btn btn-lg"  %>
               <% else %>
                 <%= link_to 'Seleccionar', user_session_path, class: "btn btn-lg" %>
               <% end %>

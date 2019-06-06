@@ -15,6 +15,6 @@ class VuelosController < ApplicationController
     end
     
     def set_passsanger
-      @people = params
+      @people = params[:people]
     end
 end
