@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :user_flies
   has_many :vuelos, through: :user_flies
+  mount_uploader :avatar, AvatarUploader
 end

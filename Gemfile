@@ -3,6 +3,14 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.1'
 
+# Cancan
+gem 'cancan', '~> 1.6'
+# Rolify
+gem 'rolify', '~> 5.0'
+# MiniMagic
+gem 'mini_magick'
+#carrierwave
+gem 'carrierwave', '~> 1.3'
 # Stripe
 gem 'stripe-rails'
 # PopUp
