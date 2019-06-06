@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :user_flies
+  has_many :vuelos, through: :user_flies
 end
