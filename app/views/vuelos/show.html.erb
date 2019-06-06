@@ -73,7 +73,7 @@
 
             <div class="price_button text-center">
               <% if  user_signed_in? %>
-                <%= link_to 'Seleccionar', new_vuelo_checkout_path(@vuelo), class: "btn btn-lg"  %>
+                <%= link_to 'Seleccionar', new_vuelo_checkout_path(@vuelo, people: @people), class: "btn btn-lg"  %>
               <% else %>
                 <%= link_to 'Seleccionar', user_session_path, class: "btn btn-lg" %>
               <% end %>

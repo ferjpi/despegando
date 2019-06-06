@@ -1,4 +1,55 @@
-<h1>Checkouts#index</h1>
-<p>Find me in app/views/checkouts/index.html.erb</p>
+<div class="container">
+  <div class="title text-center">
+    <h1>CHECKOUT</h1>
+  </div>
 
-<%= current_user.id %>
+  <div class="checkout__container">
+    <div class="checkout__box">
+      <div class="checkout__details">
+
+        <p class="checkout__details--description">
+          <em>Estos son los datos de tu vuelo: </em>
+        </p>
+
+        <div class="checkout__details--fly">
+          <div class="departure">
+            <span>Origen: </span>
+            <%= @vuelo.departure%>
+          </div>
+          <div class="destination">
+            <span>Destino: </span>
+            <%= @vuelo.destination %>
+          </div>
+        </div>
+
+        <div class="checkout__details--checkbox mt-1">
+          <em>Ida y Vuelta</em>
+          <%= check_box_tag 'Ida y Vuelta',  nil, true %>
+        </div>
+
+        <div class="checkout__details--user mt-2">
+          <div class="name">
+            <span>Nombre: </span>
+            <%= current_user.name%>
+          </div>
+          <div class="last_name">
+            <span>Apellidos: </span>
+            <%= current_user.last_name%>
+          </div>
+        </div>
+
+        <div class="checkout__details--data">
+          <div class="email">
+            <span>Correo: </span>
+            <%= current_user.email%>
+          </div>
+          <div class="passengers">
+            <span>Nº Pasajeros: </span>
+            <%= @people %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

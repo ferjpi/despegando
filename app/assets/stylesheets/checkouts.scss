@@ -2,9 +2,28 @@
   .checkout__box {
     border: 1px solid #ccc;
     border-radius: 5px;
-    padding: 5px;
+    padding: 10px;
 
     .checkout__details {
+      .checkout__details--fly {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .checkout__details--user {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .checkout__details--data {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .checkout_buttons {
+        display: flex;
+        justify-content: space-evenly;
+      }
     }
   }
 }

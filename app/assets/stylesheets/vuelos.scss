@@ -72,20 +72,19 @@ body {
         display: inherit;
         flex-direction: column;
 
+        &:hover {
+          i,
+          a {
+            color: $color-puple;
+          }
+        }
         i {
           color: #686464;
           text-align: center;
-
-          &:hover {
-            color: $color-puple;
-          }
         }
 
         a {
           color: #686464;
-          &:hover {
-            color: $color-puple;
-          }
         }
       }
     }

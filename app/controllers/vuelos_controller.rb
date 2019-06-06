@@ -9,12 +9,11 @@ class VuelosController < ApplicationController
     end
     
     private
-    
-    def vuelo_params
-      params.permit(:departure, :destination, :passenger, :people)
-    end
-    
-    def set_passsanger
-      @people = params[:people]
-    end
+      def vuelo_params
+        params.permit(:departure, :destination, :passenger, :people)
+      end
+      
+      def set_passsanger
+        @people = params[:people]
+      end
 end
