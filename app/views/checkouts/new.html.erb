@@ -51,7 +51,7 @@
 
         <div class="checkout_buttons mt-2">
           <div class="agree">
-            <%= link_to "ACEPTO", vuelo_checkouts_path(people: @people) , class:"btn btn-outline-success btn-lg" %>
+            <%= link_to "ACEPTO", vuelo_checkouts_path(people: @people), method: :post, class:"btn btn-outline-success btn-lg" %>
           </div>
           <div class="refuse">
             <%= link_to "RECHAZO", root_path, class:"btn btn-lg btn-outline-danger" %>

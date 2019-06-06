@@ -1,6 +1,6 @@
 class CheckoutsController < ApplicationController
-  before_action :set_passenger, only: [:index, :new]
-  before_action :find_fly, only: [:index, :new]
+  before_action :set_passenger, only: [:index, :new, :create]
+  before_action :find_fly, only: [:index, :new, :create]
 
   def index
   end
@@ -12,7 +12,10 @@ class CheckoutsController < ApplicationController
   end
   
   def create
-    # @user = @route.users
+    @link = @vuelo.user_flies.create!(user_id: current_user.id)
+    if @link
+      redirect_to vuelo_checkouts_path(@people), notice: "Vuelo confirmado"
+    end
   end
   
   private
