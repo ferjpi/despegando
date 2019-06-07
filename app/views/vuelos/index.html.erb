@@ -70,3 +70,50 @@
   </div>
 </div>
 <% end %>
+
+<!-- Promociones de vuelos -->
+<% if @promos  %>
+<div class="container">
+  
+  <div class="Promociones mt-5">
+    <div class="promociones__title">
+      <h2>Promociones</h2>
+    </div>
+
+    <div class="promociones__container mb-5">
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <% @promos.each do |promo|%>
+            <div class="carousel-item active">
+
+              <div class="card" style="width: 18rem;">
+                <%= image_tag(promo.image_url(:photo).to_s, class: "card-img-top")%>
+                <div class="card-body">
+                  <h6 class="card-title">
+                    <%= promo.description_package %>
+                  </h6>
+                  <h4 class="card-title">
+                    <%= promo.description %>
+                  </h4>
+                <div class="card-body">
+                  <em>
+                    <%= promo.description_value %>
+                  </em>
+                  <span>
+                    <%= promo.price_promo %>
+                  </span>
+                </div>
+                </div>
+              </div>
+
+              <!-- <img src="..." class="d-block w-100" alt="..."> -->
+  
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<% end %>

@@ -23,6 +23,14 @@
       <%=icon('fas', 'suitcase-rolling')%>
       <%= link_to "Rutas", vuelos_routes_path%>
     </div>
+    <% if user_signed_in? %>
+      <% if current_user.has_role? :admin %>
+      <div class="nav-item">
+        <%=icon('fab', 'fly')%>
+        <%= link_to "Promo", promo_path%>
+      </div>
+      <% end %>
+    <% end %>
     <div class="nav-item">
       <%=icon('fas', 'question-circle')%>
       <%= link_to "Ayuda"%>

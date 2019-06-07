@@ -2,6 +2,7 @@ class VuelosController < ApplicationController
   before_action :set_passsanger, only: [:show, :index, :routes]
   def index
       @vuelo = Vuelo.search(vuelo_params)
+      @promos = Promo.all
     end
     
     def show
@@ -25,7 +26,24 @@ class VuelosController < ApplicationController
       @vuelos = Vuelo.all
     end
     
+    def promo
+      @promo = Promo.new
+    end
+
+    def promo_create
+      @promo = Promo.create(promo_params)
+      if @promo
+        redirect_to root_path, notice: "Promocion creada"
+      else
+        redirect_to vuelos_promo_path, alert: "Hubo un error, intentalo de nuevo"
+      end
+    end
+    
     private
+      def promo_params
+        params.require(:promo).permit(:image, :description_package, :description, :description_value, :price_promo)
+      end
+      
       def vuelo_create_params
         params.require(:vuelo).permit(:departure, :destination, :passenger)
       end
