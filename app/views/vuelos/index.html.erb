@@ -80,37 +80,34 @@
       <h2>Promociones</h2>
     </div>
 
-    <div class="promociones__container mb-5">
-      <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
+    <div class="promociones__container mb-5 row">
           <% @promos.each do |promo|%>
-            <div class="carousel-item active">
 
+              <%= link_to root_path, class: "link-card" do%>
               <div class="card" style="width: 18rem;">
                 <%= image_tag(promo.image_url(:photo).to_s, class: "card-img-top")%>
                 <div class="card-body">
                   <h6 class="card-title">
-                    <%= promo.description_package %>
+                    <div class="text_package">
+                      <%= promo.description_package %>
+                    </div>
                   </h6>
                   <h4 class="card-title">
                     <%= promo.description %>
                   </h4>
-                <div class="card-body">
-                  <em>
+                </div>
+                <div class="card-body field-price">
+                  <em class="text_price">
                     <%= promo.description_value %>
                   </em>
-                  <span>
-                    <%= promo.price_promo %>
+                  <span class="value_price">
+                    $<%= promo.price_promo %>
                   </span>
                 </div>
-                </div>
               </div>
+              <% end %>
 
-              <!-- <img src="..." class="d-block w-100" alt="..."> -->
-  
           <% end %>
-        </div>
-      </div>
     </div>
 
   </div>

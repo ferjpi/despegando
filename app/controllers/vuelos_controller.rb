@@ -1,6 +1,7 @@
 class VuelosController < ApplicationController
   before_action :set_passsanger, only: [:show, :index, :routes]
   def index
+      @vuelos = Vuelo.all
       @vuelo = Vuelo.search(vuelo_params)
       @promos = Promo.all
     end

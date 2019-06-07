@@ -42,7 +42,7 @@ body {
     border-radius: 0 0 0 30px;
     justify-content: end;
     padding: 0.5rem 1rem;
-    width: 500px;
+    width: 600px;
 
     .nav-item {
       padding: 0 20px;
@@ -308,6 +308,45 @@ body {
       .input {
         border-radius: 5px;
         width: 400px;
+      }
+    }
+  }
+}
+
+.Promociones {
+  .promociones__container {
+    .link-card {
+      margin: 0 10px;
+      &:hover {
+        text-decoration: none;
+      }
+
+      .card {
+        .card-body {
+          .card-title {
+            color: #686464;
+
+            .text_package {
+              font-weight: bold;
+            }
+          }
+          .card-body {
+            color: #686464;
+          }
+        }
+        .card-body.field-price {
+          color: #686464;
+          border-top: 1px solid rgba(0, 0, 0, 0.125);
+          display: grid;
+
+          .text_price {
+            font-weight: bold;
+          }
+          .value_price {
+            font-size: 1.6rem;
+            text-align: right;
+          }
+        }
       }
     }
   }
