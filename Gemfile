@@ -12,7 +12,7 @@ gem 'mini_magick'
 #carrierwave
 gem 'carrierwave', '~> 1.3'
 # Stripe
-gem 'stripe-rails'
+# gem 'stripe-rails'
 # PopUp
 gem 'magnific-popup-rails', '~> 1.1.0'
 # Devise
