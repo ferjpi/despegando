@@ -1,0 +1,23 @@
+<div class="container">
+  <h1 class="text-center">Nuevo Vuelo</h1>
+
+  <div class="form_create-fly">
+    <%= form_with model: @vuelo, class: "form" do |vuelo| %>
+      <p>Ingresa los datos del vuelo: </p>
+      <div class="form--departure mb-2">
+        <%= vuelo.text_field :departure, placeholder: "Origen", class: "input" %>
+      </div>
+      <div class="form--destination mb-2">
+        <%= vuelo.text_field :destination, placeholder: "Destino", class: "input" %>
+      </div>
+      <div class="form--passenger mb-2">
+        <%= vuelo.text_field :passenger, placeholder: "Capacidad de pasajeros", class: "input" %>
+      </div>
+      <div class="form--price mb-2">
+        <%= vuelo.text_field :price, placeholder: "Precio unitario", class: "input" %>
+      </div>
+      <%= vuelo.submit "Crear vuelo", class: "btn btn-lg btn-default mt-3" %>
+    <% end %>
+  </div>
+
+</div>

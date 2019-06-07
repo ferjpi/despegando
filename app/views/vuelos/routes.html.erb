@@ -1,0 +1,39 @@
+<div class="container">
+
+  <% if @vuelos  %>
+    <% @vuelos.each do |vuelo|%>
+      <div class="container mt-5 mb-5">
+        <div class="show-flights p-2 row">
+          <div class="show-flights--group-1 col-9 row justify-content-center">
+            <div class="show-flights__departure ml-5 mr-5">
+              <%= vuelo.departure%>
+            </div>
+            <div class="to m-2">
+                <%=icon('fas', 'long-arrow-alt-right')%>
+            </div>
+            <div class="show-flights__destination ml-5 mr-5">
+              <%= vuelo.destination%>
+            </div>
+          </div>
+          <div class="show-flights--group-2 col-3 row justify-content-center">
+            <div class="show-flights--selection m-2">
+              <% if current_user.has_role? :admin %>
+                <%= link_to 'Editar', edit_vuelo_path(vuelo.id), class: "btn btn-lg btn-outline-warning" %>
+                <%= link_to 'Borrar', vuelo_path(vuelo.id), method: :delete, class: "btn btn-lg btn-outline-danger" %>
+              <% else %>
+                <%= link_to 'Seleccionar', vuelo_path(vuelo.id, people: @people), class: "btn btn-lg btn-default" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+  <% if current_user.has_role? :admin %>
+    <div class="create-new-route mb-4">
+      <%= link_to 'Crear nueva ruta', new_vuelo_path, class: "btn btn-lg btn-default" %>
+    </div>
+  <% end %>
+
+</div>

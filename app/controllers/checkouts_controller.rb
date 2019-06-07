@@ -12,9 +12,9 @@ class CheckoutsController < ApplicationController
   end
   
   def create
-    @link = @vuelo.user_flies.create!(user_id: current_user.id)
+    @link = @vuelo.user_flies.create(user_id: current_user.id)
     if @link
-      redirect_to vuelo_checkouts_path(@people), notice: "Vuelo confirmado"
+      redirect_to vuelo_checkouts_path(people: @people), notice: "Vuelo confirmado"
     end
   end
   

@@ -167,13 +167,19 @@ body {
     align-items: center;
 
     .show-flights--selection {
-      a {
+      .btn-default {
         background: $color-puple;
         border-radius: $border-radius-default;
         color: white;
       }
     }
   }
+}
+
+.btn-default {
+  background: $color-puple;
+  border-radius: $border-radius-default;
+  color: white;
 }
 
 .show {
@@ -280,6 +286,28 @@ body {
           padding: 5px 20px;
           color: white;
         }
+      }
+    }
+  }
+}
+
+.form_create-fly {
+  margin: 30px auto;
+  width: 400px;
+
+  .form {
+    display: flex;
+    flex-direction: column;
+
+    .form--departure,
+    .form--destination,
+    .form--passenger,
+    .form--price {
+      width: inherit;
+
+      .input {
+        border-radius: 5px;
+        width: 400px;
       }
     }
   }
