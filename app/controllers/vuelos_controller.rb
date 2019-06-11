@@ -1,3 +1,5 @@
+# require "mini_magick_helper.rb"
+
 class VuelosController < ApplicationController
   before_action :set_passsanger, only: [:show, :index, :routes]
   def index
