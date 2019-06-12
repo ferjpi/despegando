@@ -1,0 +1,26 @@
+<div class="container">
+  <h1 class="text-center">Editar promocion</h1>
+
+  <div class="form_create-promo">
+    <%= form_with url: "/promo/#{@promo.id}", scope: 'promo', method: :put,  class: "form" do |promo| %>
+      <p>Ingresa los datos de la promocion: </p>
+      <div class="form--image mb-2">
+        <%= promo.file_field :image%>
+      </div>
+      <div class="form--departure mb-2">
+        <%= promo.text_field :description_package, placeholder: "Descripcion del paquete", class: "input" %>
+      </div>
+      <div class="form--destination mb-2">
+        <%= promo.text_field :description, placeholder: "descripcion general", class: "input" %>
+      </div>
+      <div class="form--passenger mb-2">
+        <%= promo.text_field :description_value, placeholder: "Decripcion del valor", class: "input" %>
+      </div>
+      <div class="form--price mb-2">
+        <%= promo.text_field :price_promo, placeholder: "Precio de la promo", class: "input" %>
+      </div>
+      <%= promo.submit "Actualizar promo", class: "btn btn-lg btn-default mt-3" %>
+    <% end %>
+  </div>
+
+</div>

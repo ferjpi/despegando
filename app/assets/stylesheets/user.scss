@@ -1,5 +1,4 @@
 .user {
-  // background-image: url("user.svg");
   background: linear-gradient(45deg, #4fc1e8, #49ceb5);
 
   background-size: cover;
@@ -26,5 +25,34 @@
 
   .icon {
     color: white;
+  }
+}
+
+.form-container {
+  margin: 10px auto;
+  width: 400px;
+
+  .form {
+    .field {
+      #user_avatar {
+      }
+
+      #user_name,
+      #user_last_name,
+      #user_email,
+      #user_password,
+      #user_password_confirmation,
+      #user_current_password {
+        border-radius: 5px;
+        width: 400px;
+      }
+    }
+    .actions {
+      margin: 20px 0;
+
+      .btn {
+        width: -moz-available;
+      }
+    }
   }
 }

@@ -103,13 +103,18 @@ body {
       margin: 0 0rem;
 
       .box-row--inputs {
-        .box-row--input {
-          input {
-            border-radius: $border-radius-default;
-          }
-          input::placeholder {
-            font-style: italic;
-            color: $color-gray-2;
+        .row {
+          width: inherit;
+
+          .box-row--input {
+            input {
+              border-radius: $border-radius-default;
+              width: inherit;
+            }
+            input::placeholder {
+              font-style: italic;
+              color: $color-gray-2;
+            }
           }
         }
       }
@@ -119,6 +124,7 @@ body {
           .box-row--input {
             input {
               border-radius: $border-radius-default;
+              width: 300px;
             }
           }
         }
@@ -315,6 +321,35 @@ body {
 
 .Promociones {
   .promociones__container {
+    .card-admin {
+      margin: 0 auto;
+
+      .card-body {
+        color: #686464;
+
+        .card-title {
+          .text_package {
+            font-weight: bold;
+          }
+        }
+      }
+      .card-body.field-price {
+        color: #686464;
+
+        .field-price {
+          display: grid;
+
+          .text-price {
+            font-weight: bold;
+          }
+
+          .value_price {
+            font-size: 1.6rem;
+          }
+        }
+      }
+    }
+
     .link-card {
       margin: 0 10px;
       &:hover {
@@ -348,6 +383,20 @@ body {
           }
         }
       }
+    }
+  }
+}
+
+.form_create-promo {
+  margin: 10px auto;
+  width: 400px;
+
+  .form {
+    text-align: center;
+
+    .input {
+      border-radius: 5px;
+      width: 400px;
     }
   }
 }

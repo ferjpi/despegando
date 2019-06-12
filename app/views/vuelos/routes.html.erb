@@ -18,7 +18,7 @@
           <div class="show-flights--group-2 col-3 row justify-content-center">
             <div class="show-flights--selection m-2">
               <% if current_user.has_role? :admin %>
-                <%= link_to 'Editar', edit_vuelo_path(vuelo.id), class: "btn btn-lg btn-outline-warning" %>
+                <%= link_to 'Editar', edit_vuelo_path(id: vuelo.id), class: "btn btn-lg btn-outline-warning" %>
                 <%= link_to 'Borrar', vuelo_path(vuelo.id), method: :delete, class: "btn btn-lg btn-outline-danger" %>
               <% else %>
                 <%= link_to 'Seleccionar', vuelo_path(vuelo.id, people: @people), class: "btn btn-lg btn-default" %>
