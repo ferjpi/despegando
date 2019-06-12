@@ -321,6 +321,35 @@ body {
 
 .Promociones {
   .promociones__container {
+    .card-admin {
+      margin: 0 auto;
+
+      .card-body {
+        color: #686464;
+
+        .card-title {
+          .text_package {
+            font-weight: bold;
+          }
+        }
+      }
+      .card-body.field-price {
+        color: #686464;
+
+        .field-price {
+          display: grid;
+
+          .text-price {
+            font-weight: bold;
+          }
+
+          .value_price {
+            font-size: 1.6rem;
+          }
+        }
+      }
+    }
+
     .link-card {
       margin: 0 10px;
       &:hover {

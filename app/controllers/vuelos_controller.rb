@@ -1,6 +1,8 @@
 class VuelosController < ApplicationController
   before_action :set_passsanger, only: [:show, :index, :routes]
   before_action :set_vuelo, only: [:show, :edit, :update, :destroy]
+  before_action :set_promo, only: [:edit_promo, :update_promo, :destroy_promo]
+
   def index
       @vuelos = Vuelo.all
       @vuelo = Vuelo.search(vuelo_params)
@@ -57,7 +59,30 @@ class VuelosController < ApplicationController
       end
     end
     
+    def edit_promo
+    end
+    
+    def update_promo
+      if @promo.update(promo_params)
+        redirect_to root_path, notice: "Promocion Actualizada"
+      else
+        redirect_to vuelos_promo_path, alert: "Hubo un error, intentalo de nuevo"
+      end
+    end
+    
+    def destroy_promo
+      if @promo.destroy
+        redirect_to root_path, notice: "Promocion Borrada"
+      else
+        redirect_to root_path, alert: "Ooh! Hubo un error"
+      end
+    end
+    
     private
+      def set_promo
+        @promo = Promo.find_by(id: params[:id])
+      end
+
       def set_vuelo
         @vuelo = Vuelo.find_by(id: params[:id])
       end
