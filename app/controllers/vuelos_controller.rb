@@ -1,5 +1,6 @@
 class VuelosController < ApplicationController
   before_action :set_passsanger, only: [:show, :index, :routes]
+  before_action :set_vuelo, only: [:show, :edit, :update, :destroy]
   def index
       @vuelos = Vuelo.all
       @vuelo = Vuelo.search(vuelo_params)
@@ -7,9 +8,8 @@ class VuelosController < ApplicationController
     end
     
     def show
-      @vuelo = Vuelo.find_by(id: params[:id])
     end
-
+    
     def new
       @vuelo = Vuelo.new
     end
@@ -20,6 +20,23 @@ class VuelosController < ApplicationController
         redirect_to vuelos_routes_path, notice: "Vuelo creado"
       else
         render 'new', alert: "Hubo un error, intentalo de nuevo"
+      end
+    end
+    
+    def edit
+    end
+    
+    def update
+      if @vuelo.update(vuelo_create_params)
+        redirect_to vuelos_routes_path, notice: "Vuelo Actualizado"
+      else
+        redirect_to edit_vuelo_path, alert: "Ooh! Hubo un error"
+      end
+    end
+
+    def destroy
+      if @vuelo.destroy
+        redirect_to vuelos_routes_path, notice: "Vuelo Borrado"
       end
     end
 
@@ -41,12 +58,16 @@ class VuelosController < ApplicationController
     end
     
     private
+      def set_vuelo
+        @vuelo = Vuelo.find_by(id: params[:id])
+      end
+
       def promo_params
         params.require(:promo).permit(:image, :description_package, :description, :description_value, :price_promo)
       end
       
       def vuelo_create_params
-        params.require(:vuelo).permit(:departure, :destination, :passenger)
+        params.require(:vuelo).permit(:departure, :destination, :passenger, :price)
       end
 
       def vuelo_params
