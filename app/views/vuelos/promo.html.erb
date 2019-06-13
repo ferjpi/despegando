@@ -20,6 +20,7 @@
         <%= promo.text_field :price_promo, placeholder: "Precio de la promo", class: "input" %>
       </div>
       <div class="form--vuelos mb-2">
+        <em>Selecciona el vuelo al cual va a estar vinculado la promocion (destino)</em>
         <%= promo.collection_select :vuelo_id, @vuelos, :id, :destination, {prompt: 'Selecciona el destino'}, class: "input" %>
       </div>
       <%= promo.submit "Crear promo", method: :post, class: "btn btn-lg btn-default mt-3" %>
