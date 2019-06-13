@@ -1,12 +1,9 @@
-# require "mini_magick_helper.rb"
-
 class VuelosController < ApplicationController
   before_action :set_passsanger, only: [:show, :index, :routes]
   before_action :set_vuelo, only: [:show, :edit, :update, :destroy]
   before_action :set_promo, only: [:edit_promo, :update_promo, :destroy_promo]
 
   def index
-      set_vuelos
       @vuelo = Vuelo.search(vuelo_params)
       @promos = Promo.all
     end
