@@ -6,7 +6,7 @@ class VuelosController < ApplicationController
   before_action :set_promo, only: [:edit_promo, :update_promo, :destroy_promo]
 
   def index
-      @vuelos = Vuelo.all
+      set_vuelos
       @vuelo = Vuelo.search(vuelo_params)
       @promos = Promo.all
     end
@@ -45,10 +45,11 @@ class VuelosController < ApplicationController
     end
 
     def routes
-      @vuelos = Vuelo.all
+      set_vuelos
     end
     
     def promo
+      set_vuelos
       @promo = Promo.new
     end
 
@@ -62,6 +63,7 @@ class VuelosController < ApplicationController
     end
     
     def edit_promo
+      set_vuelos
     end
     
     def update_promo
@@ -81,6 +83,10 @@ class VuelosController < ApplicationController
     end
     
     private
+      def set_vuelos
+        @vuelos = Vuelo.all
+      end
+
       def set_promo
         @promo = Promo.find_by(id: params[:id])
       end
@@ -90,7 +96,7 @@ class VuelosController < ApplicationController
       end
 
       def promo_params
-        params.require(:promo).permit(:image, :description_package, :description, :description_value, :price_promo)
+        params.require(:promo).permit(:image, :description_package, :description, :description_value, :price_promo, :vuelo_id)
       end
       
       def vuelo_create_params
