@@ -84,41 +84,75 @@
 
             
 
-            <% if current_user.has_role? :admin %>
-              <div class="card card-admin" style="width: 18rem;">
-              <%= link_to vuelo_path(promo.vuelo_id, people: 1) do%>
-                <%= image_tag(promo.image_url(:photo).to_s, class: "card-img-top")%>
+            <% if user_signed_in? %>
+
+              <% if current_user.has_role? :admin %>
+                <div class="card card-admin" style="width: 18rem;">
+                <%= link_to vuelo_path(promo.vuelo_id, people: 1) do%>
+                  <%= image_tag(promo.image_url(:photo).to_s, class: "card-img-top")%>
+                <% end %>
+
+                <div class="card-body">
+                  <h6 class="card-title">
+                    <div class="text_package">
+                      <%= promo.description_package %>
+                    </div>
+                  </h6>
+                  <h4 class="card-title">
+                    <%= promo.description %>
+                  </h4>
+                </div>
+
+                <div class="card-body field-price">
+                  <div class="field-price">
+                    <em class="text_price">
+                      <%= promo.description_value %>
+                    </em>
+                    <span class="value_price text-right">
+                      $<%= promo.price_promo %>
+                    </span>
+                  </div>
+                  <div class="text-center mt-1">
+                    <%= link_to "Editar", edit_promo_path(id: promo.id), class: "btn btn-outline-warning" %>
+                    <%= link_to "Borrar", promo_path(id: promo.id), class: "btn btn-outline-danger", method: :delete %>
+                  </div>
+                </div>
+                
+                </div>
+              <% else %>
+
+                <%= link_to vuelo_path(promo.vuelo_id, people: 1), class: "link-card" do%>
+                  <div class="card" style="width: 18rem;">
+                    <%= image_tag(promo.image_url(:photo).to_s, class: "card-img-top")%>
+
+                    <div class="card-body">
+                      <h6 class="card-title">
+                        <div class="text_package">
+                          <%= promo.description_package %>
+                        </div>
+                      </h6>
+                      <h4 class="card-title">
+                        <%= promo.description %>
+                      </h4>
+                    </div>
+
+                    <div class="card-body field-price">
+                      <em class="text_price">
+                        <%= promo.description_value %>
+                      </em>
+                      <span class="value_price">
+                        $<%= promo.price_promo %>
+                      </span>
+                    </div>
+                    
+
+                  </div>
+                <% end %>
+
               <% end %>
 
-              <div class="card-body">
-                <h6 class="card-title">
-                  <div class="text_package">
-                    <%= promo.description_package %>
-                  </div>
-                </h6>
-                <h4 class="card-title">
-                  <%= promo.description %>
-                </h4>
-              </div>
-
-              <div class="card-body field-price">
-                <div class="field-price">
-                  <em class="text_price">
-                    <%= promo.description_value %>
-                  </em>
-                  <span class="value_price text-right">
-                    $<%= promo.price_promo %>
-                  </span>
-                </div>
-                <div class="text-center mt-1">
-                  <%= link_to "Editar", edit_promo_path(id: promo.id), class: "btn btn-outline-warning" %>
-                  <%= link_to "Borrar", promo_path(id: promo.id), class: "btn btn-outline-danger", method: :delete %>
-                </div>
-              </div>
-              
-              </div>
             <% else %>
-
+            
               <%= link_to vuelo_path(promo.vuelo_id, people: 1), class: "link-card" do%>
                 <div class="card" style="width: 18rem;">
                   <%= image_tag(promo.image_url(:photo).to_s, class: "card-img-top")%>
