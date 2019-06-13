@@ -88,7 +88,7 @@
 
               <% if current_user.has_role? :admin %>
                 <div class="card card-admin" style="width: 18rem;">
-                <%= link_to vuelo_path(promo.vuelo_id, people: 1) do%>
+                <%= link_to vuelo_path(promo.vuelo_id.to_s, people: 1) do%>
                   <%= image_tag(promo.image_url(:photo).to_s, class: "card-img-top")%>
                 <% end %>
 
