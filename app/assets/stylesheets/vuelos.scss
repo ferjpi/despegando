@@ -313,6 +313,14 @@ body {
   .promociones__container {
     .card-admin {
       margin: 0 auto;
+      transform: scale(1);
+      transition: all 0.5s ease-in-out;
+
+      &:hover {
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        text-decoration: none;
+        transform: scale(1.03);
+      }
 
       .card-body {
         color: #686464;
