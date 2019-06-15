@@ -1,21 +1,11 @@
 // Place all the styles related to the vuelos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables";
 @font-face {
   font-family: "Rubik", sans-serif;
   src: asset-url("Rubik-regular.ttf") format("truetype");
 }
-
-$color-black: #000;
-$color-gray-1: #444;
-$color-gray-2: #666;
-$color-gray-3: #888;
-$color-gray-4: #eee;
-
-$color-puple: #4300d2;
-$color-purple-dark: #270570;
-
-$border-radius-default: 5px;
 
 body {
   font-family: "Rubik", sans-serif;

@@ -1,0 +1,68 @@
+@import "variables";
+
+.footer {
+  background-color: $color-gray-4;
+
+  .container {
+    .contacto {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      .numeros {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        .bold {
+          font-size: 1.05rem;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .footer_description {
+      display: grid;
+      font-size: 0.9rem;
+      grid-template-columns: 1fr 1fr 1fr;
+      .nosotros {
+        .header {
+          color: $color-black;
+          font-weight: 600;
+        }
+        .list {
+          padding-left: 0;
+          .list_item {
+            list-style: none;
+            text-decoration: none;
+          }
+        }
+        color: $color-gray-2;
+      }
+      .terminos {
+        .header {
+          color: $color-black;
+          font-weight: 600;
+        }
+        .list {
+          padding-left: 0;
+          .list_item {
+            list-style: none;
+            text-decoration: none;
+          }
+        }
+        color: $color-gray-2;
+      }
+      .negocio {
+        .header {
+          color: $color-black;
+          font-weight: 600;
+        }
+        .list {
+          padding-left: 0;
+          .list_item {
+            list-style: none;
+            text-decoration: none;
+          }
+        }
+        color: $color-gray-2;
+      }
+    }
+  }
+}
