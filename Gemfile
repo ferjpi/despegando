@@ -16,7 +16,7 @@ gem 'carrierwave', '~> 1.3'
 # PopUp
 gem 'magnific-popup-rails', '~> 1.1.0'
 # Devise
-gem 'devise', '~> 4.6'
+gem 'devise', '~> 4.7'
 # Font awesome
 gem 'font-awesome-sass', '~> 5.8.1'
 # Bootstrap
