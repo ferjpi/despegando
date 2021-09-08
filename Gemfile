@@ -66,7 +66,7 @@ group :development do
   gem 'guard', '~> 2.15'
   gem 'win32console', '~> 1.3', '>= 1.3.2'
   gem 'guard-livereload', '~> 2.5', require: false
-  gem 'better_errors', '~> 2.5'
+  gem 'better_errors', '~> 2.8'
 
 end
 
